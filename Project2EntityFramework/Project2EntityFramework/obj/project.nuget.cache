@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+pAt05fvEskNf88jn6W6jPdooWu52XP7I3b3w0ZXaNVn7N85NPYX/WtNhvakAJL5R7qsrOLqNM3ixVt0LLiqxQ==",
+  "dgSpecHash": "RgGtUSXQ6Op7dc6kkWs6Yj6kJR1jGkPJMTmrhzUym4B0/Qlxd9n9EdYZI29eVItd7OANdruJp4sMfspzMsoHWA==",
   "success": true,
-  "projectFilePath": "C:\\Revature20220307\\Project2\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
+  "projectFilePath": "C:\\Revature20220307\\Project2\\Team-Fire\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\klee5\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\klee5\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -2063,11 +2063,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Revature20220307\\Project2\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
+      "projectUniqueName": "C:\\Revature20220307\\Project2\\Team-Fire\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
       "projectName": "Project2EntityFramework",
-      "projectPath": "C:\\Revature20220307\\Project2\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
+      "projectPath": "C:\\Revature20220307\\Project2\\Team-Fire\\Project2EntityFramework\\Project2EntityFramework\\Project2EntityFramework.csproj",
       "packagesPath": "C:\\Users\\klee5\\.nuget\\packages\\",
-      "outputPath": "C:\\Revature20220307\\Project2\\Project2EntityFramework\\Project2EntityFramework\\obj\\",
+      "outputPath": "C:\\Revature20220307\\Project2\\Team-Fire\\Project2EntityFramework\\Project2EntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\klee5\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2139,7 +2139,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\klee5\\scoop\\apps\\dotnet-sdk\\current\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
