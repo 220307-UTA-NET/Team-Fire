@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Project2EntityFramework.Data;
+using Project2EntityFramework.Models;
 
 #nullable disable
 
 namespace Project2EntityFramework.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(SunCardBackend2Context))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

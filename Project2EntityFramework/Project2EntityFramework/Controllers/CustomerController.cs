@@ -9,9 +9,9 @@ namespace Project2EntityFramework.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {               
-        private readonly DataContext _context;
+        private readonly SunCardBackend2Context _context;
 
-        public CustomerController(DataContext context)
+        public CustomerController(SunCardBackend2Context context)
         {
             _context = context;
         }
@@ -20,13 +20,13 @@ namespace Project2EntityFramework.Controllers
         public async Task<ActionResult<List<Customer>>> Get()
         {           
 
-            return Ok(await _context.Customer.ToListAsync());
+            return Ok(await _context.CustomerLists.ToListAsync());
         }
 
         [HttpGet("{customerId}")]
         public async Task<ActionResult<Customer>> Get(int customerId)
         {
-            var customer = await _context.Customer.FindAsync(customerId);
+            var customer = await _context.CustomerLists.FindAsync(customerId);
             if (customer == null)
                 return BadRequest("Customer not found.");
             return Ok(customer);
@@ -35,16 +35,16 @@ namespace Project2EntityFramework.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Customer>>> RegisterCustomer(Customer customer)
         {
-            _context.Customer.Add(customer);
+            _context.CustomerLists.Add(customer);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Customer.ToListAsync());
+            return Ok(await _context.CustomerLists.ToListAsync());
         }
 
         [HttpPut]
         public async Task<ActionResult<List<Customer>>> UpdateCustomer(Customer request)
         {
-            var dbCustomer = await _context.Customer.FindAsync(request.customerId);
+            var dbCustomer = await _context.CustomerLists.FindAsync(request.customerId);
             if (dbCustomer == null)
                 return BadRequest("Customer not found.");
 
@@ -60,19 +60,19 @@ namespace Project2EntityFramework.Controllers
             dbCustomer.customerEmail = request.customerEmail;
 
             await _context.SaveChangesAsync();
-            return Ok(await _context.Customer.ToListAsync());
+            return Ok(await _context.CustomerLists.ToListAsync());
         }
 
         [HttpDelete("{customerId}")]
         public async Task<ActionResult<Customer>> RemoveCustomer(int customerId)
         {
-            var dbCustomer = await _context.Customer.FindAsync(customerId);
+            var dbCustomer = await _context.CustomerLists.FindAsync(customerId);
             if (dbCustomer == null)
                 return BadRequest("Customer not found.");
 
-            _context.Customer.Remove(dbCustomer);
+            _context.CustomerLists.Remove(dbCustomer);
             await _context.SaveChangesAsync();
-            return Ok(await _context.Customer.ToListAsync());
+            return Ok(await _context.CustomerLists.ToListAsync());
         }
     }
 }

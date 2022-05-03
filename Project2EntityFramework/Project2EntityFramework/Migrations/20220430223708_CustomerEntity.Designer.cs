@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Project2EntityFramework.Data;
+using Project2EntityFramework.Models;
 
 #nullable disable
 
 namespace Project2EntityFramework.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(SunCardBackend2Context))]
     [Migration("20220430223708_CustomerEntity")]
     partial class CustomerEntity
     {

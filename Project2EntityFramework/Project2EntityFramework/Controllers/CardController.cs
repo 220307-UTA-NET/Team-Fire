@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Project2EntityFramework.Models;
 
 namespace Project2EntityFramework.Controllers
 {
@@ -8,9 +9,9 @@ namespace Project2EntityFramework.Controllers
     [ApiController]
     public class CardController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly SunCardBackend2Context _context;
 
-        public CardController(DataContext context)
+        public CardController(SunCardBackend2Context context)
         {
             _context = context;
         }
@@ -19,13 +20,13 @@ namespace Project2EntityFramework.Controllers
         public async Task<ActionResult<List<Card>>> Get()
         {
 
-            return Ok(await _context.Card.ToListAsync());
+            return Ok(await _context.CardLists.ToListAsync());
         }
 
         [HttpGet("{cardId}")]
         public async Task<ActionResult<Card>> Get(int cardId)
         {
-            var card = await _context.Card.FindAsync(cardId);
+            var card = await _context.CardLists.FindAsync(cardId);
             if (card == null)
                 return BadRequest("Card not found.");
             return Ok(card);
@@ -34,16 +35,16 @@ namespace Project2EntityFramework.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Card>>> RegisterCard(Card card)
         {
-            _context.Card.Add(card);
+            _context.CardLists.Add(card);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Card.ToListAsync());
+            return Ok(await _context.CardLists.ToListAsync());
         }
 
         [HttpPut]
         public async Task<ActionResult<List<Card>>> UpdateCard(Card request)
         {
-            var dbCard = await _context.Card.FindAsync(request.cardId);
+            var dbCard = await _context.CardLists.FindAsync(request.cardId);
             if (dbCard == null)
                 return BadRequest("Card not found.");
 
@@ -53,19 +54,19 @@ namespace Project2EntityFramework.Controllers
             dbCard.cardCurrentBalance = request.cardCurrentBalance;
             
             await _context.SaveChangesAsync();
-            return Ok(await _context.Card.ToListAsync());
+            return Ok(await _context.CardLists.ToListAsync());
         }
 
         [HttpDelete("{cardId}")]
         public async Task<ActionResult<Card>> RemoveCard(int cardId)
         {
-            var dbCard = await _context.Card.FindAsync(cardId);
+            var dbCard = await _context.CardLists.FindAsync(cardId);
             if (dbCard == null)
                 return BadRequest("Card not found.");
 
-            _context.Card.Remove(dbCard);
+            _context.CardLists.Remove(dbCard);
             await _context.SaveChangesAsync();
-            return Ok(await _context.Card.ToListAsync());
+            return Ok(await _context.CardLists.ToListAsync());
         }
     }
 }
