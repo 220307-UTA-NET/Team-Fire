@@ -2,16 +2,16 @@
 {
     public class Customer
     {
-        public int customerId { get; set; } 
-        public string customerPWord { get; set; } = string.Empty;
-        public string customerFirstName { get; set; } = string.Empty;
-        public string customerLastName { get; set; } = string.Empty;
-        public string customerAddress1 { get; set; } = string.Empty;
-        public string customerAddress2 { get; set; } = string.Empty;
-        public string customerCity { get; set; } = string.Empty;
-        public string customerStateAbb { get; set; } = string.Empty;
-        public string customerZip { get; set; } = string.Empty;
-        public string customerPhone { get; set; } = string.Empty;
-        public string customerEmail { get; set; } = string.Empty;
+        public int Customer_ID { get; set; } 
+        public string PWord { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string Address1 { get; set; } = string.Empty;
+        public string Address2 { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public string StateAbb { get; set; } = string.Empty;
+        public string Zip { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
     }
 }

@@ -28,52 +28,52 @@ namespace Project2EntityFramework.Models
         {
             modelBuilder.Entity<Card>(entity =>
             {
-                entity.HasKey(e => e.cardId)
+                entity.HasKey(e => e.Card_ID)
                     .HasName("PK__CardList__45AA4B439D22A0B4");
 
                 entity.ToTable("CardList", "Firecard");
 
-                entity.Property(e => e.cardId).HasColumnName("Card_ID");
+                entity.Property(e => e.Card_ID).HasColumnName("Card_ID");
 
-                entity.Property(e => e.cardNumber).HasColumnName("Card_Number");
+                entity.Property(e => e.Card_Number).HasColumnName("Card_Number");
 
-                entity.Property(e => e.cardCurrentBalance).HasColumnType("money");
+                entity.Property(e => e.CurrentBalance).HasColumnType("money");
 
-                entity.Property(e => e.cardInitialBalance).HasColumnType("money");
+                entity.Property(e => e.InitialBalance).HasColumnType("money");
 
-                entity.Property(e => e.cardPurchaseDate).HasMaxLength(10);
+                entity.Property(e => e.PurchaseDate).HasMaxLength(10);
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasKey(e => e.customerId)
+                entity.HasKey(e => e.Customer_ID)
                     .HasName("PK__Customer__8CB286B935965D52");
 
                 entity.ToTable("CustomerList", "Firecard");
 
-                entity.Property(e => e.customerId).HasColumnName("Customer_ID");
+                entity.Property(e => e.Customer_ID).HasColumnName("Customer_ID");
 
-                entity.Property(e => e.customerAddress1).HasMaxLength(255);
+                entity.Property(e => e.Address1).HasMaxLength(255);
 
-                entity.Property(e => e.customerAddress2).HasMaxLength(255);
+                entity.Property(e => e.Address2).HasMaxLength(255);
 
-                entity.Property(e => e.customerCity).HasMaxLength(255);
+                entity.Property(e => e.City).HasMaxLength(255);
 
-                entity.Property(e => e.customerEmail).HasMaxLength(100);
+                entity.Property(e => e.Email).HasMaxLength(100);
 
-                entity.Property(e => e.customerFirstName).HasMaxLength(150);
+                entity.Property(e => e.FirstName).HasMaxLength(150);
 
-                entity.Property(e => e.customerLastName).HasMaxLength(150);
+                entity.Property(e => e.LastName).HasMaxLength(150);
 
-                entity.Property(e => e.customerPhone).HasMaxLength(20);
+                entity.Property(e => e.Phone).HasMaxLength(20);
 
-                entity.Property(e => e.customerPWord)
+                entity.Property(e => e.PWord)
                     .HasMaxLength(30)
                     .HasColumnName("PWord");
 
-                entity.Property(e => e.customerStateAbb).HasMaxLength(2);
+                entity.Property(e => e.StateAbb).HasMaxLength(2);
 
-                entity.Property(e => e.customerZip).HasMaxLength(10);
+                entity.Property(e => e.Zip).HasMaxLength(10);
             });
 
         }

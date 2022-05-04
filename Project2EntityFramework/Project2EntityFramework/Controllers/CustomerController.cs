@@ -44,20 +44,20 @@ namespace Project2EntityFramework.Controllers
         [HttpPut]
         public async Task<ActionResult<List<Customer>>> UpdateCustomer(Customer request)
         {
-            var dbCustomer = await _context.CustomerLists.FindAsync(request.customerId);
+            var dbCustomer = await _context.CustomerLists.FindAsync(request.Customer_ID);
             if (dbCustomer == null)
                 return BadRequest("Customer not found.");
 
-            dbCustomer.customerPWord = request.customerPWord;
-            dbCustomer.customerFirstName = request.customerFirstName;
-            dbCustomer.customerLastName = request.customerLastName;
-            dbCustomer.customerAddress1 = request.customerAddress1;
-            dbCustomer.customerAddress2 = request.customerAddress2;
-            dbCustomer.customerCity = request.customerCity;
-            dbCustomer.customerStateAbb = request.customerStateAbb;
-            dbCustomer.customerZip = request.customerZip;
-            dbCustomer.customerPhone = request.customerPhone;
-            dbCustomer.customerEmail = request.customerEmail;
+            dbCustomer.PWord = request.PWord;
+            dbCustomer.FirstName = request.FirstName;
+            dbCustomer.LastName = request.LastName;
+            dbCustomer.Address1 = request.Address1;
+            dbCustomer.Address2 = request.Address2;
+            dbCustomer.City = request.City;
+            dbCustomer.StateAbb = request.StateAbb;
+            dbCustomer.Zip = request.Zip;
+            dbCustomer.Phone = request.Phone;
+            dbCustomer.Email = request.Email;
 
             await _context.SaveChangesAsync();
             return Ok(await _context.CustomerLists.ToListAsync());

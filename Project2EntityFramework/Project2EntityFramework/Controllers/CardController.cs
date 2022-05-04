@@ -44,14 +44,14 @@ namespace Project2EntityFramework.Controllers
         [HttpPut]
         public async Task<ActionResult<List<Card>>> UpdateCard(Card request)
         {
-            var dbCard = await _context.CardLists.FindAsync(request.cardId);
+            var dbCard = await _context.CardLists.FindAsync(request.Card_ID);
             if (dbCard == null)
                 return BadRequest("Card not found.");
 
-            dbCard.cardNumber = request.cardNumber;
-            dbCard.cardPurchaseDate = request.cardPurchaseDate;
-            dbCard.cardInitialBalance = request.cardInitialBalance;
-            dbCard.cardCurrentBalance = request.cardCurrentBalance;
+            dbCard.Card_Number = request.Card_Number;
+            dbCard.PurchaseDate = request.PurchaseDate;
+            dbCard.InitialBalance = request.InitialBalance;
+            dbCard.CurrentBalance = request.CurrentBalance;
             
             await _context.SaveChangesAsync();
             return Ok(await _context.CardLists.ToListAsync());

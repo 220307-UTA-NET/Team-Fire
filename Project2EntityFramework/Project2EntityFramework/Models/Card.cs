@@ -5,13 +5,13 @@ namespace Project2EntityFramework
 {
     public class Card
     {
-        public int cardId { get; set; }
-        public long cardNumber { get; set; }
-        public string cardPurchaseDate { get; set; }
+        public int Card_ID { get; set; }
+        public long Card_Number { get; set; }
+        public string PurchaseDate { get; set; }
 
-        public decimal cardInitialBalance { get; set; }
+        public decimal InitialBalance { get; set; }
 
-        public decimal cardCurrentBalance { get; set; }
-        public int customerId { get; set; }
+        public decimal CurrentBalance { get; set; }
+        public int Customer { get; set; }
     }
 }
