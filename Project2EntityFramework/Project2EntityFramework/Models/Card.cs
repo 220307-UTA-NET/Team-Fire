@@ -13,5 +13,17 @@ namespace Project2EntityFramework
 
         public decimal CurrentBalance { get; set; }
         public int Customer { get; set; }
+
+        public Card() { }
+
+        public Card(int Card_ID, long Card_Number, string PurchaseDate, decimal InitialBalance, decimal CurrentBalance , int Customer)
+        {
+            this.Card_ID = Card_ID;
+            this.Card_Number = Card_Number;
+            this.PurchaseDate = PurchaseDate;
+            this.InitialBalance = InitialBalance;
+            this.CurrentBalance = CurrentBalance;
+            this.Customer = Customer;
+        }
     }
 }
