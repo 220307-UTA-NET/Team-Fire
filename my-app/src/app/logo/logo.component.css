@@ -1,0 +1,16 @@
+.imgbox{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 650px;
+background-color: rgb(84, 1, 0);
+margin-bottom: 20px;
+}
+.headerbox{
+    background-color: rgb(84, 1, 0);
+    width: 300%;
+    padding: 1px;
+    margin-left: -100%;
+    margin-right: -100%;
+    display: flex;
+}

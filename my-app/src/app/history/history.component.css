@@ -1,0 +1,8 @@
+.panel_head{
+    width: 150px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 0;
+    background-color: rgb(47, 47, 47);
+    color:rgb(255, 221, 0);
+}
