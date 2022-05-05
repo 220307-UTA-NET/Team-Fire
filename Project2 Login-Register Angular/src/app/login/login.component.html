@@ -1,0 +1,28 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <div class = "text-center">
+                <h1>Login</h1>
+                <h6>Please enter email & password!!</h6>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerFirstName"class = "form-label">First Name</label>
+                    <input type = "customerFirstName" class = "form-control" id = "exampleInputcustomerFirstName" aria-describedby="customerFirstNameHelp">
+                    <div id = "customerFirstNameHelp" class = "form-text"></div>
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerLastName"class = "form-label">Last Name</label>
+                    <input type = "customerLastName" class = "form-control" id = "exampleInputcustomerLastName" aria-describedby="customerLastNameHelp">
+                    <div id = "customerLastNameHelp" class = "form-text"></div>
+                </div>
+                <div class = "mb-3">
+                    <label for = "examplecustomerPWord"class = "form-label">Password</label>
+                    <input formControlName = "customerPWord" type = "customerPWord" class = "form-control" id = "exampleInputcustomerPWord" aria-describedby="customerPWordHelp">
+                </div>
+                <button type = "submit" class = "btn btn-primary">LOGIN</button>
+            </form>
+            <a style="color: #fff;margin-top:10px" routerLink = "/signup">New user? Click to signup!!</a>
+        </div>
+    </div>
+</div>
