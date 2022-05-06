@@ -6,27 +6,40 @@ import{map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ApiService {
-
+    
+  public loginAPIUrl : string = "https://localhost:44371/api/Login"  
   constructor(private http: HttpClient) { }
 
-  postCustomer(data : any) {
-    return this.http.post<any>("http://localhost:3000/posts",data)
+  PostCustomer(data : any) {
+    return this.http.post<any>(`${this.loginAPIUrl}registerCustomer`,data)
     .pipe(map((res:any)=>{
         return res;
     }))
 }
 
-updateCustomer(data : any) {
-    return this.http.post<any>("http://localhost:3000/posts",data)
+UpdateCustomer(data : any) {
+    return this.http.put<any>(`${this.loginAPIUrl}updateCustomer`,data)
     .pipe(map((res:any)=>{
         return res;
     }))
 }
 
-deleteCustomer(data : any) {
-    return this.http.post<any>("http://localhost:3000/posts",data)
+DeleteCustomer(customerId : number) {
+    return this.http.delete<any>(`${this.loginAPIUrl}deleteCustomer`+customerId)
     .pipe(map((res:any)=>{
         return res;
     }))
+}
+
+GetCustomers(){
+    return this.http.get<any>(`${this.loginAPIUrl}getAllCustomers`)
+    .pipe(map((res:any)=>{
+        return res;
+    }))
+}
+
+signUp(customerObj : any){
+    return this.http.post<any>(`${this.loginAPIUrl}signup`,customerObj)
+
 }
 }

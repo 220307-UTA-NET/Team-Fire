@@ -103,7 +103,7 @@ postCustomerDetails(){
   this.customerModelObj.customerZip = this.formValue.value.customerZip;
   this.customerModelObj.customerPhone = this.formValue.value.customerPhone;
   this.customerModelObj.customerEmail = this.formValue.value.customerEmail;
-  this.api.updateEmployee(this.customerModelObj,this.customerModelObj.customerId)
+  this.api.updateEmployee(this.customerModelObj)
   .subscribe((res: any)=>{
     alert("Updated Successfully");
     let ref = document.getElementById('cancel')
