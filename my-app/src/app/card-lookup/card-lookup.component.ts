@@ -25,13 +25,26 @@ export class CardLookupComponent implements OnInit {
   ) { }
   balance = '';
   ngOnInit(): void {
-    this.balance = '123456654321';
+    this.balance = '';
   }
-  onSubmit(): void{
-      this.balance = '654321123456';
-      const configUrl = 'get/api/card/' + this.cardNum.value;
-      const response = fetch(configUrl);
-      this.balance= JSON.stringify(response); 
+  async onSubmit(): Promise<void>{
+      const configUrl = 'https://localhost:49181/api/Card/' + this.cardNum.value;
+      try{
+      const response = await fetch(configUrl);
+      const data = await response.json();
+      if (typeof data == 'string')
+      {
+        this.balance = 'Card not Found';
+      }
+      else
+      {
+        this.balance = JSON.stringify(data);
+      }
+
+    }catch (error){
+      this.balance = 'Card not Found';
+    }
+
   }
   cardNum = new FormControl('');
 

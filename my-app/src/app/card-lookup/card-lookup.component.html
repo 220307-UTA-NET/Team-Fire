@@ -2,7 +2,7 @@
 </div>
 <div class = "textBody">
     <input id="cardNum" type="number" [formControl]="cardNum" required maxlength="12" minlength="12">
-    <button id ="butt" type="submit" [disabled]="!cardNum.valid" value="cardNum">Submit</button>
+    <button id ="butt" type="submit" [disabled]="!cardNum.valid" value="cardNum" (click)="onSubmit()">Submit</button>
     <div *ngIf="cardNum.invalid && (cardNum.dirty || cardNum.touched)" class="alert">
         <div *ngIf="cardNum.errors?.['required']">
             You must enter a number.
@@ -14,6 +14,6 @@
    
 </div>
 <div class = "textBody">
-<p>Current card balance: {{balance}}</p>
+<p>Current card balance: ${{balance}}</p>
 
 </div>
