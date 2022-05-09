@@ -20,7 +20,7 @@ namespace Project2EntityFramework.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("ConnectionString");
+                optionsBuilder.UseSqlServer("[ConnectionString]");
             }
         }
 

@@ -82,10 +82,10 @@ namespace Proejct2EntityFrameworkTest
             Assert.Equal(expected6, actual6);
         }
 
-        [Fact]
+       /* [Fact]
         public void CustomerUpdateTest()
         {
             Customer test = new Customer(6, "sdfnisgowhbos", "June", "Lee", "400 square ave", "", "Arlington", "TX", "76011", "817-561-4795", "JuneLee@gmail.com");
-        }
+        }*/
     }  
 }

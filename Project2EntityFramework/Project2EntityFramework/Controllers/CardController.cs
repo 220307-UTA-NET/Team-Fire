@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project2EntityFramework.Models;
-
 namespace Project2EntityFramework.Controllers
 {
     [Route("api/[controller]")]
@@ -23,13 +21,15 @@ namespace Project2EntityFramework.Controllers
             return Ok(await _context.CardLists.ToListAsync());
         }
 
-        [HttpGet("{cardId}")]
-        public async Task<ActionResult<Card>> Get(int cardId)
+        [HttpGet("{cardNum:long}")]
+        public async Task<ActionResult<decimal>> Get(long cardNum)
         {
-            var card = await _context.CardLists.FindAsync(cardId);
+            var card = await _context.CardLists.Where(cardFind => cardFind.Card_Number == cardNum).FirstOrDefaultAsync();
+            string error = "Card_not_found.";
+
             if (card == null)
-                return BadRequest("Card not found.");
-            return Ok(card);
+                return BadRequest(error);
+            return Ok(card.CurrentBalance);
         }
 
         [HttpPost]
@@ -52,19 +52,7 @@ namespace Project2EntityFramework.Controllers
             dbCard.PurchaseDate = request.PurchaseDate;
             dbCard.InitialBalance = request.InitialBalance;
             dbCard.CurrentBalance = request.CurrentBalance;
-            
-            await _context.SaveChangesAsync();
-            return Ok(await _context.CardLists.ToListAsync());
-        }
 
-        [HttpDelete("{cardId}")]
-        public async Task<ActionResult<Card>> RemoveCard(int cardId)
-        {
-            var dbCard = await _context.CardLists.FindAsync(cardId);
-            if (dbCard == null)
-                return BadRequest("Card not found.");
-
-            _context.CardLists.Remove(dbCard);
             await _context.SaveChangesAsync();
             return Ok(await _context.CardLists.ToListAsync());
         }
