@@ -1,0 +1,47 @@
+{
+    "posts":[{
+        "Customer_ID": "1",
+        "FirstName": "Robert",
+        "LastName": "Muller",
+        "PWord": "dijiAXsUtBSh4tk", 
+        "Address1": "271 Third Way",
+        "Address2": "4",
+        "City": "Greenville",
+        "StateAbb": "MN",
+        "Zip": "60459",
+        "Phone": "435-897-6957",
+        "Email": "RobertMuller566@google.com"
+    },
+    {
+        "Customer_ID": "2",
+        "FirstName": "Peter",
+        "LastName": "Brown",
+        "PWord": ")8\#BMiD8INRQ", 
+        "Address1": "141 Aspen Dr",
+        "Address2": "",
+        "City": "Bristol",
+        "StateAbb": "CA",
+        "Zip": "58072",
+        "Phone": "245-050-0657",
+        "Email": "PeterBrown334@google.com"
+    },
+    {
+        "Customer_ID": "3",
+        "FirstName": "Rita",
+        "LastName": "Silva",
+        "PWord": "`RN%Sa.*@F", 
+        "Address1": "471 River Dr",
+        "Address2": "",
+        "City": "Centerville",
+        "StateAbb": "NJ",
+        "Zip": "56112",
+        "Phone": "157-754-7870",
+        "Email": "RitaSilva48@google.com"
+    }
+
+    ],
+    "signupCustomers": [],
+    "profile": {
+        "name": ""
+    }
+}

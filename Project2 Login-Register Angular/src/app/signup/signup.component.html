@@ -1,0 +1,55 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <div class = "text-center">
+                <h1>Sign Up</h1>
+                <h6>Register Yourself!!</h6>
+            </div>
+            <form>
+                <form [formgroup]="signupForm" (ngSumbit)="signUp()">
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerFirstName" class = "form-label">First Name</label>
+                    <input formControlName = "customerFirstName" type = "text" class = "form-control" id = "exampleInputcustomerFirstName" aria-describedby="customerFirstNameHelp">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerLastName" class = "form-label">Last Name</label>
+                    <input formControlName = "customerLastName" type = "text" class = "form-control" id = "exampleInputcustomerLastName" aria-describedby="customerLastNameHelp">                
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerPWord" class = "form-label">Password</label>
+                    <input formControlName = "customerPWord" type = "text" class = "form-control" id = "exampleInputcustomerPWord" aria-describedby="customerPWordHelp">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerAddress1" class = "form-label">Address1</label>
+                    <input formControlName = "customerAddress1" type = "text" class = "form-control" id = "exampleInputcustomerAddress1" aria-describedby="customerAddress1Help">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerAddress2" class = "form-label">Address2</label>
+                    <input formControlName = "customerAddress2" type = "text" class = "form-control" id = "exampleInputcustomerAddress2" aria-describedby="customerAddress2Help">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerCity" class = "form-label">City</label>
+                    <input formControlName = "customerCity" type = "text" class = "form-control" id = "exampleInputcustomerCity" aria-describedby="customerCityHelp">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerStateAbb" class = "form-label">StateAbb</label>
+                    <input formControlName = "customerStateAbb" type = "text" class = "form-control" id = "exampleInputcustomerStateAbb" aria-describedby="customerStateAbbHelp">                
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerZip" class = "form-label">Zip</label>
+                    <input formControlName = "customerZip" type = "text" class = "form-control" id = "exampleInputcustomerZip" aria-describedby="customerZipHelp">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerPhone" class = "form-label">Phone</label>
+                    <input formControlName = "customerPhone" type = "text" class = "form-control" id = "exampleInputcustomerPhone" aria-describedby="customerPhoneHelp">
+                </div>
+                <div class = "mb-3">
+                    <label for = "exampleInputcustomerEmail" class = "form-label">Email</label>
+                    <input formControlName = "customerEmail" type = "email" class = "form-control" id = "exampleInputcustomerEmail" aria-describedby="customerEmailHelp">
+                </div>
+                <button type = "submit" class = "btn btn-primary">SIGN UP</button>
+            </form>
+            <a style="color: #fff;margin-top:10px" routerLink="/login">Already Registered? Click to Login!</a>
+        </div>
+    </div>
+</div>

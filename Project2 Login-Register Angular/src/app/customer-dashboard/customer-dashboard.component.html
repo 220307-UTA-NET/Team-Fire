@@ -1,0 +1,116 @@
+<nav class = "navbar navbar-light bg-primary">
+    <div class = "container-fluid">
+        <h1 style = "color: aliceblue;" class="navbar-brand">FireCard Project2</h1>
+        <div class = "d-flex">
+            <button (click)="clickAddCustomer()" type="button" data-toggle="modal" 
+            data-target="#exampleModal" class="btn btn-success">Add Customer</button>
+
+            <button routerLink="/login" class = "btn btn-danger mx-2">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<table class = "table mt-3">
+    <thead>
+        <tr>
+            <th scope = "col">Customer_ID</th>
+            <th scope = "col">FirstName</th>
+            <th scope = "col">LastName</th>
+            <th scope = "col">PWord</th>
+            <th scope = "col">Address1</th>
+            <th scope = "col">Address2</th>
+            <th scope = "col">City</th>
+            <th scope = "col">StateAbb</th>
+            <th scope = "col">Zip</th>
+            <th scope = "col">Phone</th>
+            <th scope = "col">Email</th>
+            <th scope = "col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of customerData">
+            <td>{{row.customerId}}</td>
+            <td>{{row.customerFirstName}}</td>
+            <td>{{row.customerLastName}}</td>
+            <td>{{row.customerPWord}}</td>
+            <td>{{row.customerAddress1}}</td>
+            <td>{{row.customerAddress2}}</td>
+            <td>{{row.customerCity}}</td>
+            <td>{{row.customerStateAbb}}</td>
+            <td>{{row.customerZip}}</td>
+            <td>{{row.customerPhone}}</td>
+            <td>{{row.customerEmail}}</td>
+
+            <td>
+                <button (click)="onEdit(row)" style="color: aliceblue" type="button" data-toggle="modal" 
+                data-target="#exampleModal" class = "btn-btn-info">Edit</button>
+                <button (click)="deleteCustomer(row)" class = "btn-btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Customer Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputcustomerFirstName" class="form-label">First Name</label>
+                  <input type="text" formControlName = "customerFirstName" class="form-control" id="exampleInputcustomerFirstName" aria-describedby="customerFirstNameHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputcustomerLastName" class="form-label">Last Name</label>
+                  <input type="text" formControlName = "customerLastName" class="form-control" id="exampleInputcustomerLastName">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputcustomerPWord" class="form-label">PWord</label>
+                    <input type="text" formControlName = "customerPWord" class="form-control" id="exampleInputcustomerPWord">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerAddress1" class="form-label">Address1</label>
+                    <input type="text" formControlName = "customerAddress1" class="form-control" id="exampleInputcustomerAddress1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerAddress2" class="form-label">Address2</label>
+                    <input type="text" formControlName = "customerAddress2" class="form-control" id="exampleInputcustomerAddress2">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerCity" class="form-label">City</label>
+                    <input type="text" formControlName = "customerCity" class="form-control" id="exampleInputcustomerCity">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerStateAbb" class="form-label">StateAbb</label>
+                    <input type="text" formControlName = "customerStateAbb" class="form-control" id="exampleInputcustomerStateAbb">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerZip" class="form-label">Zip</label>
+                    <input type="text" formControlName = "customerZip" class="form-control" id="exampleInputcustomerZip">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerPhone" class="form-label">Phone</label>
+                    <input type="text" formControlName = "customerPhone" class="form-control" id="exampleInputcustomerPhone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputcustomerEmail" class="form-label">Email</label>
+                    <input type="email" formControlName = "customerEmail" class="form-control" id="exampleInputcustomerEmail">
+                  </div>
+
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
